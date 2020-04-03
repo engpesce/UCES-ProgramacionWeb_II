@@ -12,7 +12,18 @@ public class ProcesarFormulario extends HttpServlet{
 		resp.setContentType("text/html; charset=UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		
-		resp.getWriter().println("Procesamiento correcto!!!!!");
+		resp.getWriter().println("<h1>Procesamiento correcto!!!!!<h1>");
+		
+	};
+	
+	
+	protected void doGet(javax.servlet.http.HttpServletRequest req, javax.servlet.http.HttpServletResponse resp) throws javax.servlet.ServletException ,java.io.IOException {
+		
+		req.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html; charset=UTF-8");
+		resp.setCharacterEncoding("UTF-8");
+		
+		resp.getWriter().println("<h3>Procesamiento correcto mediante GET!!!!!<h3>");
 		
 	};
 }

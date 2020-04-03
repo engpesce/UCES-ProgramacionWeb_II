@@ -28,7 +28,7 @@ public class LoginService {
 	
 	public static boolean isLogged(HttpSession session) {
 		
-		if (session != null && session.getAttribute("loggedUser") != null) {
+		if (session != null && session.getAttribute("user") != null) {
 			return true;
 		}else {
 			return false;
@@ -38,7 +38,7 @@ public class LoginService {
 	
 	public static Cookie login(HttpSession session, String user) {
 		//FIXME: Guardar session!!
-		session.setAttribute("loggedUser", user);
+		session.setAttribute("user", user);
 		session.setMaxInactiveInterval(2*60); //Expira en 2 min
 		
 		Cookie userCookie = new Cookie("user", user);

@@ -14,6 +14,7 @@ public class ServletEscupeHTML extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		PrintWriter writer = resp.getWriter();
 		resp.setContentType("text/html; charset=UTF-8");
 		resp.setCharacterEncoding("UTF-8");
@@ -32,7 +33,7 @@ public class ServletEscupeHTML extends HttpServlet{
 				writer.println("<div>");
 					writer.println("<h2>Formulario escrito desde un Servlet!</h2>");
 					writer.println("<p>Si bien no es nada práctico podemos escribir HTML de manera dinámica</p>");
-					writer.println("<form action=\"process\" method=\"post\">");
+					writer.println("<form action=\"process\" method=\"get\">");
 						writer.println("<fieldset>");
 							writer.println("<legend>Información de contacto:</legend>");
 							writer.println("<label for=\"nombre\">Nombre:</label>");
