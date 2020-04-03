@@ -4,13 +4,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Login page</title>
+	<title>Tempano de Hielo - Login page</title>
 	<link href="css/style.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-	<div>
+	<div class="content-form">
         <h2>Tempano de Hielo - Sistema de Pedidos Online</h2>
         <p>Ingrese su nombre y usuario para loguearse</p>
 

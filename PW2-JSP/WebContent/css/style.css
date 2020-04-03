@@ -22,7 +22,6 @@ legend {
 }
 
 
-
 input[type=submit], input[type=reset], input[type=button]{
     width: 40%;
     display: inline;
@@ -43,5 +42,6 @@ input[type=submit]:hover {
 div.content-form {
     border-radius: 5px;
     background-color: #f2f2f2;
+    margin: 10px;
     padding: 20px;
 }
