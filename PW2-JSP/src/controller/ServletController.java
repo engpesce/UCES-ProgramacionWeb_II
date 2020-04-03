@@ -30,8 +30,12 @@ public class ServletController extends HttpServlet{
 		if (action != null) {
 			
 			if ( action.equals("showLogin") ){
-				req.setAttribute("showRecoveryLink", "true");
-				resp.sendRedirect("Login.jsp");
+				if (!LoginService.isLogged(req.getSession())) {
+					req.setAttribute("showRecoveryLink", "true");
+					req.getRequestDispatcher("Login.jsp").forward(req, resp);
+				} else {
+					req.getRequestDispatcher("UsuarioValido.jsp").forward(req, resp);
+				}
 				
 			} else if (action.equals("login")) {	
 				
@@ -43,7 +47,7 @@ public class ServletController extends HttpServlet{
 					
 				} else {
 					req.setAttribute("usuarioMal", true);
-					resp.sendRedirect("Login.jsp");
+					req.getRequestDispatcher("Login.jsp").forward(req, resp);
 				}
 				
 			} else if (action.equals("logout")) {	

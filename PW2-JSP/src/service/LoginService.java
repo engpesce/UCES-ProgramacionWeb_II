@@ -26,13 +26,23 @@ public class LoginService {
 		
 	}
 	
+	public static boolean isLogged(HttpSession session) {
+		
+		if (session != null && session.getAttribute("loggedUser") != null) {
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
+	
 	public static Cookie login(HttpSession session, String user) {
 		//FIXME: Guardar session!!
-		session.setAttribute("user", user);
-		session.setMaxInactiveInterval(30*60); //Expira en 30 min
+		session.setAttribute("loggedUser", user);
+		session.setMaxInactiveInterval(2*60); //Expira en 2 min
 		
 		Cookie userCookie = new Cookie("user", user);
-		userCookie.setMaxAge(30*60);
+		userCookie.setMaxAge(2*60);
 		
 		return userCookie;
 	}

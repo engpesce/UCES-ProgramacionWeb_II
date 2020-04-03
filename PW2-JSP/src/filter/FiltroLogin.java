@@ -39,7 +39,8 @@ public class FiltroLogin implements Filter {
 			this.context.log("Unauthorized access request");
 			res.sendRedirect("Login.jsp");
 			
-		} else if ( session != null && (uri.endsWith("Login.jsp") || uri.endsWith("ValidarServlet"))){
+		} else if ( session != null && session.getAttribute("loggedUser") != null &&
+				(uri.endsWith("Login.jsp") || uri.endsWith("ValidarServlet"))){
 			res.sendRedirect("UsuarioValido.jsp");
 			
 		} else {
