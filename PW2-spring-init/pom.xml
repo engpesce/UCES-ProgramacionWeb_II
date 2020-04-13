@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>edu.uces.ar</groupId>
 	<artifactId>pw2-spring-init</artifactId>
-	<version>1.0</version>
+	<version>2.0</version>
 	<name>PW2-spring-init</name>
 	<description>Primer proyecto de Spring</description>
 

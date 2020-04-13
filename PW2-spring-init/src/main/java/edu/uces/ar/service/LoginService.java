@@ -3,12 +3,19 @@ package edu.uces.ar.service;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class LoginService {
 
 	private final static String userOK = "admin";
 	private final static String passOK = "admin";
 	
-	public static boolean validateLogin(String user, String pass) {
+	public LoginService() {
+		super();
+	}
+
+	public boolean validateLogin(String user, String pass) {
 		
 		if (user != null && pass != null) {
 			
@@ -26,7 +33,7 @@ public class LoginService {
 		
 	}
 	
-	public static boolean isLogged(HttpSession session) {
+	public boolean isLogged(HttpSession session) {
 		
 		if (session != null && session.getAttribute("user") != null) {
 			return true;
@@ -36,7 +43,7 @@ public class LoginService {
 		
 	}
 	
-	public static Cookie login(HttpSession session, String user) {
+	public Cookie login(HttpSession session, String user) {
 		//FIXME: Guardar session!!
 		session.setAttribute("user", user);
 		session.setMaxInactiveInterval(2*60); //Expira en 2 min

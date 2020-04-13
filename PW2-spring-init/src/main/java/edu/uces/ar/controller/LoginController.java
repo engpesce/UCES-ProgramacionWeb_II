@@ -16,6 +16,13 @@ import edu.uces.ar.service.LogoutService;
 @Controller
 public class LoginController {
 	
+	LoginService loginService;
+	
+	public LoginController(LoginService loginService) {
+		super();
+		this.loginService = loginService;
+	}
+
 	@GetMapping({"/"})
     public String showIndex(Model model) {
         return "index";
@@ -24,7 +31,7 @@ public class LoginController {
 	@GetMapping({"/showLogin"})
     public String showLogin(Model model, HttpServletRequest req) {
 		
-		if (!LoginService.isLogged(req.getSession())) {
+		if (!loginService.isLogged(req.getSession())) {
 			model.addAttribute("showRecoveryLink", "true");
 			return "Login";
 		} else {
@@ -39,8 +46,8 @@ public class LoginController {
 		
         model.addAttribute("name", name);
         
-        if (LoginService.validateLogin(name, pass)) {
-			Cookie userCookie = LoginService.login(req.getSession(false), name);
+        if (loginService.validateLogin(name, pass)) {
+			Cookie userCookie = loginService.login(req.getSession(false), name);
 			resp.addCookie(userCookie);
 			return "UsuarioValido";
 			
