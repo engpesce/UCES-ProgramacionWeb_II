@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>edu.uces.ar</groupId>
-	<artifactId>springinit</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>pw2-spring-init</artifactId>
+	<version>1.0</version>
 	<name>PW2-spring-init</name>
 	<description>Primer proyecto de Spring</description>
 
