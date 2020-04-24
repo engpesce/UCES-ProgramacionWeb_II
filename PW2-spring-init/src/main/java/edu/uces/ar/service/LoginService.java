@@ -5,21 +5,26 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
+import edu.uces.ar.model.User;
+import edu.uces.ar.repository.UserRepository;
+
 @Service
 public class LoginService {
 
-	private final static String userOK = "admin";
-	private final static String passOK = "admin";
+	private UserRepository repository;
 	
-	public LoginService() {
+	public LoginService(UserRepository repository) {
 		super();
+		this.repository = repository;
 	}
 
 	public boolean validateLogin(String user, String pass) {
 		
 		if (user != null && pass != null) {
 			
-			if(userOK.equals(user) && passOK.equals(pass)) {
+			User usuarioEncontrado = repository.findById(user);
+			
+			if(usuarioEncontrado != null && usuarioEncontrado.getPassword().equals(pass)) {
 				return true;
 
 			} else {

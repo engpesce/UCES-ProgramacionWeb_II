@@ -28,9 +28,14 @@
             </c:if>
             
             <%  if ( Boolean.valueOf(String.valueOf(request.getAttribute("showRecoveryLink"))) ){ %>
-        	<p>Olvido su contraseña?</p>
-        	<p> Haga click en el siguiente link para restablecerla...<a href="/recoveryPassword">AQUÍ</a></p>
+        	
+        	<p> Olvido su contraseña? <br>
+        		Haga click en el siguiente link para restablecerla...<a href="/recoveryPassword">AQUÍ</a>
+        	</p>
            <% } %>
+           <p>No tiene usuario?<br>
+           	  Haga click en el siguiente link para Crearlo...<a href="/createUser">AQUÍ</a>
+           </p>
             
           </fieldset>
         </form>

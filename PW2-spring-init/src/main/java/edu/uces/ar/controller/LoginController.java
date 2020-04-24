@@ -79,20 +79,7 @@ public class LoginController {
 	
 	
 	//-------------------------------------------------------------------------------
-	
-	@GetMapping({"/createUser"})
-    public String showCreateUser(Model model) {
 
-		return "createUser";
-    }
-	
-	@PostMapping({"/createUser"})
-    public String createUser(Model model) {
-
-		//TODO to implement
-		return "index";
-    }
-	
 	
 	@GetMapping({"/sendNotification"})
     public String sendNotification(Model model) {
