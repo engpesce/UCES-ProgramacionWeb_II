@@ -10,5 +10,5 @@ public class ApiRestHeladeriaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ApiRestHeladeriaApplication.class, args);
 	}
-
+	
 }
