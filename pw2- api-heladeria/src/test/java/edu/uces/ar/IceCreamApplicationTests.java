@@ -26,14 +26,6 @@ public class IceCreamApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		
-		Set<IceCream> helados = new HashSet<IceCream>();
-		Optional<IceCream> helado1 = iceCreamService.findById(1L);
-		helados.add(helado1.get());
-		Optional<IceCream> helado2 = iceCreamService.findById(2L);
-		helados.add(helado2.get());
-		
-		helados.forEach( iceCream -> iceCreamService.save(iceCream));
 	}
 	
 }
