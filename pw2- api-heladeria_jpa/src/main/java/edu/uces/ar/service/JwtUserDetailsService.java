@@ -7,8 +7,8 @@ import edu.uces.ar.model.User;
 import edu.uces.ar.model.dto.UserDTO;
 
 @Service
-public interface JwtUserDetailsService extends UserDetailsService {
+public interface JwtUserDetailsService extends UserDetailsService{
 
-	User registerNewUserAccount(UserDTO user);
+	User save(UserDTO user);
 	
 }

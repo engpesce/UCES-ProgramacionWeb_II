@@ -3,14 +3,11 @@ package edu.uces.ar.model.dto;
 import java.math.BigDecimal;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 
 public class IceCreamDTO {
 
 	private Long id;
-	@NotBlank(message = "description is mandatory")
 	private String description;
-	@Min(1)
 	private BigDecimal unitPrice;
 	@Min(1)
 	private Integer stock;

@@ -1,21 +1,20 @@
-package edu.uces.ar.model.dto;
+package edu.uces.ar.model;
 
 import java.math.BigDecimal;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-public class IceCreamDTO {
+@Entity
+public class IceCream {
 
-	private Long id;
-	@NotBlank(message = "description is mandatory")
+	private @Id @GeneratedValue Long id;
 	private String description;
-	@Min(1)
 	private BigDecimal unitPrice;
-	@Min(1)
 	private Integer stock;
 	
-	public IceCreamDTO() {
+	public IceCream() {
 		super();
 	}
 
@@ -50,4 +49,5 @@ public class IceCreamDTO {
 		this.stock = stock;
 	}
 
+	
 }
