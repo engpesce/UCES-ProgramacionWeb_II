@@ -10,9 +10,10 @@
 	    <div class="content-form">
 	    	<div>
 	            <h1>Migrando Servlets a Spring MVC</h1>
+	            <p>Usuario recuperado!!!</p>
 			</div>
 			<nav>
-				<a href="/showLogin">Ingresar al sistema</a>			
+				<a href="/showLogin">Click aquí para ir al login</a>			
 			</nav>
 	    </div>
     </body>

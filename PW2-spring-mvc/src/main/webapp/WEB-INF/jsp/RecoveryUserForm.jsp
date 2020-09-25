@@ -12,19 +12,19 @@
 <body>
 	<div class="content-form">
         <h1>Migrando Servlets a Spring MVC</h1>
-        <p>Creación de Usuario</p>
+        <p>Recuperacion de Usuario - Cambio de Password</p>
 	
 		<fieldset>
 	        <legend>Información de contacto:</legend>
-			<form:form method="post" action="createUser"
+			<form:form method="post" action="submitRecoveryUserForm"
 			  modelAttribute="user">
 			    <form:label path="name">Name</form:label>
-			    <form:input path="name" />
+			    <form:input path="name" disabled="true"/>
 			     
 			    <form:label path="password">Password</form:label>
 			    <form:input path="password" />
 			     
-			    <input type="submit" value="Create" />
+			    <input type="submit" value="Confirmar" />
 			</form:form>
 	
 	  		<c:if test="${isValid == false}">

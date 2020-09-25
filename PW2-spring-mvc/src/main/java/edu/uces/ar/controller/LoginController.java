@@ -67,27 +67,4 @@ public class LoginController {
 		return "Login";
     }
 	
-	@GetMapping({"/recoveryPassword"})
-    public String showRecoveryPassword() {
-
-		return "RecoveryPassword";
-    }
-	
-	@PostMapping({"/recoveryPassword"})
-    public String recoveryPassword() {
-
-		//TODO to implement
-		return "index";
-    }
-	
-	
-	//-------------------------------------------------------------------------------
-
-	
-	@GetMapping({"/sendNotification"})
-    public String sendNotification(Model model) {
-
-		//TODO to implement
-		return "index";
-    }
 }

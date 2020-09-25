@@ -4,13 +4,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Tempano de Hielo - Login page</title>
+	<title>Migrando Servlets a Spring MVC</title>
 	<link href="css/style.css" type="text/css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 	<div class="content-form">
-        <h2>Tempano de Hielo - Sistema de Pedidos Online</h2>
+        <h1>Migrando Servlets a Spring MVC</h1>
         <p>Ingrese su nombre y usuario para loguearse</p>
 
         <form action="login" method=post>
@@ -30,7 +30,7 @@
             <%  if ( Boolean.valueOf(String.valueOf(request.getAttribute("showRecoveryLink"))) ){ %>
         	
         	<p> Olvido su contraseña? <br>
-        		Haga click en el siguiente link para restablecerla...<a href="/recoveryPassword">AQUÍ</a>
+        		Haga click en el siguiente link para restablecerla...<a href="/showRecoveryUser">AQUÍ</a>
         	</p>
            <% } %>
            <p>No tiene usuario?<br>
