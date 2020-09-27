@@ -34,25 +34,25 @@ public class IceCreamController {
 		return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
 	}
 
-	@GetMapping(value = "/iceCream/{id}")
+	@GetMapping(value = "/iceCreams/{id}")
 	public ResponseEntity<IceCreamDTO> getIceCream(@PathVariable long id) {
 		return new ResponseEntity<>(service.getById(id), HttpStatus.OK);
 	}
 
-	@PostMapping(path = "/iceCream")
+	@PostMapping(path = "/iceCreams")
 	public ResponseEntity<Object> postProduct(@Valid @RequestBody IceCreamDTO iceCreamDTO) {
 		Long id = service.post(iceCreamDTO);
 		return new ResponseEntity<>("Ice Cream successfully created. Id: " + id, HttpStatus.CREATED);
 	}
 	
-	@PutMapping(value = "/iceCream/{id}")
+	@PutMapping(value = "/iceCreams/{id}")
 	public ResponseEntity<Object> putProduct(@PathVariable long id, @Valid @RequestBody IceCreamDTO iceCreamDTO) {
 		iceCreamDTO.setId(id);
 		service.put(iceCreamDTO);
 		return new ResponseEntity<>("Ice Cream successfully updated. Id: " + id, HttpStatus.CREATED);
 	}
 	
-	@DeleteMapping(value = "/iceCream/{id}")
+	@DeleteMapping(value = "/iceCreams/{id}")
 	public ResponseEntity<Object> deleteProduct(@PathVariable long id) {
 		service.deleteById(id);
 		return new ResponseEntity<>("Ice Cream deleted successfully. Id: " + id, HttpStatus.OK);
