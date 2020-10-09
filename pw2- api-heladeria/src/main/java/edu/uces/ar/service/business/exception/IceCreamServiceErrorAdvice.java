@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import edu.uces.ar.ApiRestHeladeriaApplication;
+import edu.uces.ar.model.dto.ErrorAPI;
 
 @ControllerAdvice
 public class IceCreamServiceErrorAdvice {
@@ -15,19 +16,22 @@ public class IceCreamServiceErrorAdvice {
 	private static final Logger logger = LoggerFactory.getLogger(ApiRestHeladeriaApplication.class);
 	
 	@ExceptionHandler({RuntimeException.class})
-    public ResponseEntity<String> handleRunTimeException(RuntimeException e) {
-        return error(HttpStatus.INTERNAL_SERVER_ERROR, e);
+    public ResponseEntity<ErrorAPI> handleRunTimeException(RuntimeException e) {
+        return error(HttpStatus.INTERNAL_SERVER_ERROR, "RUNTIME", e.getMessage());
     }
+	
     @ExceptionHandler({IceCreamNotFoundException.class})
-    public ResponseEntity<String> handleNotFoundException(IceCreamNotFoundException e) {
-        return error(HttpStatus.NOT_FOUND, e);
+    public ResponseEntity<ErrorAPI> handleNotFoundException(IceCreamNotFoundException e) {
+        return error(HttpStatus.NOT_FOUND, e.getErrorCode(), e.getErrorMessage());
     }
+    
     @ExceptionHandler({IceCreamServiceException.class})
-    public ResponseEntity<String> handleDogsServiceException(IceCreamServiceException e){
-        return error(HttpStatus.INTERNAL_SERVER_ERROR, e);
+    public ResponseEntity<ErrorAPI> handleDogsServiceException(IceCreamServiceException e){
+        return error(HttpStatus.INTERNAL_SERVER_ERROR, e.getErrorCode(), e.getErrorMessage());
     }
-    private ResponseEntity<String> error(HttpStatus status, Exception e) {
-    	logger.error("Exception : ", e);
-        return ResponseEntity.status(status).body(e.getMessage());
+    
+    private ResponseEntity<ErrorAPI> error(HttpStatus status, String errorCode, String errorMessage) {
+    	logger.error("Exception : " + status + " - " + errorCode);
+        return ResponseEntity.status(status).body(new ErrorAPI(errorCode, errorMessage));
     }
 }

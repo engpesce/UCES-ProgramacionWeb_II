@@ -48,7 +48,7 @@ public class IceCreamServiceImpl implements IceCreamService{
 		if (iceCream.isPresent()) {
 			BeanUtils.copyProperties(iceCream.get(), dto);
 		} else {
-			throw new IceCreamNotFoundException("Ice Cream " + id + " not found");
+			throw new IceCreamNotFoundException();
 		}
 		
 		return dto;
